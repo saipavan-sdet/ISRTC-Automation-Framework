@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ISRTC Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.isrtc.listeners.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="Sanity Tests(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.isrtc.tests.TC002_BoardingAndDropping_Selection">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyBoardingAndDroppingSelection"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.isrtc.tests.TC002_BoardingAndDropping_Selection -->
+      <class name="com.isrtc.tests.TC001_SearchWithValidData">
+        <methods>
+          <include name="verifySearchWithValidData"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.isrtc.tests.TC001_SearchWithValidData -->
+      <class name="com.isrtc.tests.TC003_ContactDetails_ValidData">
+        <methods>
+          <include name="enterContactDetailsValid"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.isrtc.tests.TC003_ContactDetails_ValidData -->
+    </classes>
+  </test> <!-- Sanity Tests(failed) -->
+  <test thread-count="5" name="Regression Tests(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.isrtc.tests.TC004_CompleteFlow_OneWayBooking">
+        <methods>
+          <include name="setUp"/>
+          <include name="completeFlowBooking"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.isrtc.tests.TC004_CompleteFlow_OneWayBooking -->
+    </classes>
+  </test> <!-- Regression Tests(failed) -->
+</suite> <!-- Failed suite [ISRTC Suite] -->

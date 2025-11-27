@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-27T12:55:53 IST" name="ISRTC Suite" finished-at="2025-11-27T12:57:40 IST" duration-ms="107875">
+    <groups>
+      <group name="regression">
+        <method signature="TC004_CompleteFlow_OneWayBooking.completeFlowBooking()[pri:0, instance:com.isrtc.tests.TC004_CompleteFlow_OneWayBooking@6127a7e]" name="completeFlowBooking" class="com.isrtc.tests.TC004_CompleteFlow_OneWayBooking"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="TC001_SearchWithValidData.verifySearchWithValidData()[pri:0, instance:com.isrtc.tests.TC001_SearchWithValidData@531f4093]" name="verifySearchWithValidData" class="com.isrtc.tests.TC001_SearchWithValidData"/>
+        <method signature="TC002_BoardingAndDropping_Selection.verifyBoardingAndDroppingSelection()[pri:0, instance:com.isrtc.tests.TC002_BoardingAndDropping_Selection@797cf65c]" name="verifyBoardingAndDroppingSelection" class="com.isrtc.tests.TC002_BoardingAndDropping_Selection"/>
+        <method signature="TC003_ContactDetails_ValidData.enterContactDetailsValid()[pri:0, instance:com.isrtc.tests.TC003_ContactDetails_ValidData@31bcf236]" name="enterContactDetailsValid" class="com.isrtc.tests.TC003_ContactDetails_ValidData"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test started-at="2025-11-27T12:55:53 IST" name="Sanity Tests" finished-at="2025-11-27T12:57:13 IST" duration-ms="80489">
+      <class name="com.isrtc.tests.TC002_BoardingAndDropping_Selection">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.isrtc.tests.TC002_BoardingAndDropping_Selection@797cf65c]" started-at="2025-11-27T12:56:18 IST" name="setUp" finished-at="2025-11-27T12:56:23 IST" duration-ms="4916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBoardingAndDroppingSelection()[pri:0, instance:com.isrtc.tests.TC002_BoardingAndDropping_Selection@797cf65c]" started-at="2025-11-27T12:56:23 IST" name="verifyBoardingAndDroppingSelection" finished-at="2025-11-27T12:56:47 IST" duration-ms="24583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBoardingAndDroppingSelection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.isrtc.tests.TC002_BoardingAndDropping_Selection@797cf65c]" started-at="2025-11-27T12:56:47 IST" name="tearDown" finished-at="2025-11-27T12:56:48 IST" duration-ms="375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.isrtc.tests.TC002_BoardingAndDropping_Selection -->
+      <class name="com.isrtc.tests.TC001_SearchWithValidData">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.isrtc.tests.TC001_SearchWithValidData@531f4093]" started-at="2025-11-27T12:55:53 IST" name="setUp" finished-at="2025-11-27T12:56:00 IST" duration-ms="7367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchWithValidData()[pri:0, instance:com.isrtc.tests.TC001_SearchWithValidData@531f4093]" started-at="2025-11-27T12:56:00 IST" name="verifySearchWithValidData" finished-at="2025-11-27T12:56:17 IST" duration-ms="17423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchWithValidData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.isrtc.tests.TC001_SearchWithValidData@531f4093]" started-at="2025-11-27T12:56:17 IST" name="tearDown" finished-at="2025-11-27T12:56:18 IST" duration-ms="442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.isrtc.tests.TC001_SearchWithValidData -->
+      <class name="com.isrtc.tests.TC003_ContactDetails_ValidData">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.isrtc.tests.TC003_ContactDetails_ValidData@31bcf236]" started-at="2025-11-27T12:56:48 IST" name="setUp" finished-at="2025-11-27T12:56:52 IST" duration-ms="4096" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="enterContactDetailsValid()[pri:0, instance:com.isrtc.tests.TC003_ContactDetails_ValidData@31bcf236]" started-at="2025-11-27T12:56:52 IST" name="enterContactDetailsValid" finished-at="2025-11-27T12:57:13 IST" duration-ms="20773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterContactDetailsValid -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.isrtc.tests.TC003_ContactDetails_ValidData@31bcf236]" started-at="2025-11-27T12:57:13 IST" name="tearDown" finished-at="2025-11-27T12:57:13 IST" duration-ms="437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.isrtc.tests.TC003_ContactDetails_ValidData -->
+    </test> <!-- Sanity Tests -->
+    <test started-at="2025-11-27T12:57:14 IST" name="Regression Tests" finished-at="2025-11-27T12:57:40 IST" duration-ms="26797">
+      <class name="com.isrtc.tests.TC004_CompleteFlow_OneWayBooking">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.isrtc.tests.TC004_CompleteFlow_OneWayBooking@6127a7e]" started-at="2025-11-27T12:57:14 IST" name="setUp" finished-at="2025-11-27T12:57:18 IST" duration-ms="4368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="completeFlowBooking()[pri:0, instance:com.isrtc.tests.TC004_CompleteFlow_OneWayBooking@6127a7e]" started-at="2025-11-27T12:57:18 IST" name="completeFlowBooking" finished-at="2025-11-27T12:57:40 IST" duration-ms="21708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- completeFlowBooking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.isrtc.tests.TC004_CompleteFlow_OneWayBooking@6127a7e]" started-at="2025-11-27T12:57:40 IST" name="tearDown" finished-at="2025-11-27T12:57:40 IST" duration-ms="715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.isrtc.tests.TC004_CompleteFlow_OneWayBooking -->
+    </test> <!-- Regression Tests -->
+  </suite> <!-- ISRTC Suite -->
+</testng-results>
