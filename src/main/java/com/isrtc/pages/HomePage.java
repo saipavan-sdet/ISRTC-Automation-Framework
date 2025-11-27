@@ -41,7 +41,7 @@ public class HomePage {
         WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(fromSuggestion));
         suggestion.click();
 
-        test.info("FROM city selected.");
+        System.out.println("FROM city selected.");
     }
 
     public void enterToCity(String toCity) {
