@@ -143,5 +143,3 @@ It supports:
 - Beautiful Extent reports  
 - Well-structured TestNG suites with groups  
 
-A production-level automation framework suitable for SDET interviews and real-world testing.
-
