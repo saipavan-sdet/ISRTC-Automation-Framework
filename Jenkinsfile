@@ -29,8 +29,11 @@ pipeline {
 
         stage('Archive Reports') {
             steps {
-                junit '**/test-output/testng-results.xml'
-                archiveArtifacts artifacts: '**/target/**/*', allowEmptyArchive: true
+                // Correct TestNG report path
+                junit 'target/surefire-reports/testng-results.xml'
+                
+                // Archive all build artifacts
+                archiveArtifacts artifacts: 'target/**/*', allowEmptyArchive: true
             }
         }
     }
