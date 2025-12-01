@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    triggers {
+        // Runs every day at 11:30 AM
+        cron('30 11 * * *')
+    }
+
     tools {
         jdk 'JDK 17'      // Use exact name configured in Jenkins
         maven 'Maven3'    // Use exact name configured in Jenkins
