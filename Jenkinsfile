@@ -29,11 +29,11 @@ pipeline {
 
         stage('Archive Reports') {
             steps {
-                // Point Jenkins to the actual TestNG report location
-                junit 'test-output/junitreports/*.xml'
+                // Record TestNG results from the actual location
+                junit 'test-output/*.xml'
                 
-                // Archive all build artifacts
-                archiveArtifacts artifacts: 'target/**/*', allowEmptyArchive: true
+                // Archive all build artifacts including reports
+                archiveArtifacts artifacts: 'target/**/*, test-output/*.xml', allowEmptyArchive: true
             }
         }
     }
