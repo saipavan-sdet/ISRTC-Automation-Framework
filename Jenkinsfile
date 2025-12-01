@@ -29,8 +29,8 @@ pipeline {
 
         stage('Archive Reports') {
             steps {
-                // Correct TestNG report path
-                junit 'target/surefire-reports/testng-results.xml'
+                // Point Jenkins to the actual TestNG report location
+                junit 'test-output/junitreports/*.xml'
                 
                 // Archive all build artifacts
                 archiveArtifacts artifacts: 'target/**/*', allowEmptyArchive: true
