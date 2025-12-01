@@ -1,47 +1,60 @@
 pipeline {
     agent any
 
+    tools {
+        // Make sure the JDK name matches your Jenkins Global Tool Configuration
+        jdk 'JDK17'
+        maven 'Maven3'
+    }
+
     environment {
-        MAVEN_HOME = tool name: 'Maven3', type: 'maven' // adjust to your Maven tool name
-        JAVA_HOME = tool name: 'JDK17', type: 'jdk'       // adjust to your JDK
-        PATH = "${env.MAVEN_HOME}/bin:${env.JAVA_HOME}/bin:${env.PATH}"
+        // Optional: set Maven home if needed
+        MVN_HOME = tool 'Maven3'
     }
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Checkout SCM') {
             steps {
-                git branch: 'master', url: 'https://github.com/saipavan-sdet/ISRTC-Automation-Framework.git'
+                git(
+                    url: 'https://github.com/saipavan-sdet/ISRTC-Automation-Framework.git',
+                    credentialsId: 'c73dc16a-41f9-4845-9af5-5924687f1354'
+                )
             }
         }
 
-        stage('Clean & Build') {
+        stage('Install Dependencies') {
             steps {
-                bat 'mvn clean install -DskipTests'
+                bat "${MVN_HOME}\\bin\\mvn clean install -DskipTests"
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                bat "${MVN_HOME}\\bin\\mvn test"
             }
         }
 
         stage('Archive Test Reports') {
             steps {
-                // Jenkins reads JUnit-style XML reports
+                // Make sure this matches your maven-surefire-plugin <reportsDirectory>
                 junit 'target/surefire-reports/*.xml'
-                
-                // Archive HTML reports for browsing
-                archiveArtifacts artifacts: 'target/surefire-reports/*.html', allowEmptyArchive: true
             }
         }
     }
 
     post {
         always {
-            echo 'Cleaning workspace...'
-            cleanWs()
+            node {
+                echo 'Cleaning workspace...'
+                cleanWs()
+            }
+        }
+        success {
+            echo 'Build and tests succeeded!'
+        }
+        failure {
+            echo 'Build or tests failed!'
         }
     }
 }
