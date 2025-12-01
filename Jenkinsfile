@@ -1,46 +1,46 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-        jdk 'JDK 17'
+    environment {
+        MAVEN_HOME = tool name: 'Maven3', type: 'maven' // adjust to your Maven tool name
+        JAVA_HOME = tool name: 'JDK17', type: 'jdk'       // adjust to your JDK
+        PATH = "${env.MAVEN_HOME}/bin:${env.JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/saipavan-sdet/ISRTC-Automation-Framework.git'
+                git branch: 'master', url: 'https://github.com/saipavan-sdet/ISRTC-Automation-Framework.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Clean & Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                bat 'mvn clean install -DskipTests'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat "mvn test"
+                bat 'mvn test'
             }
         }
 
-        stage('Archive Reports') {
+        stage('Archive Test Reports') {
             steps {
-                // Record TestNG results from the actual location
-                junit 'test-output/*.xml'
+                // Jenkins reads JUnit-style XML reports
+                junit 'target/surefire-reports/*.xml'
                 
-                // Archive all build artifacts including reports
-                archiveArtifacts artifacts: 'target/**/*, test-output/*.xml', allowEmptyArchive: true
+                // Archive HTML reports for browsing
+                archiveArtifacts artifacts: 'target/surefire-reports/*.html', allowEmptyArchive: true
             }
         }
     }
 
     post {
         always {
-            echo "Pipeline finished. Cleaning workspace."
+            echo 'Cleaning workspace...'
             cleanWs()
         }
     }
