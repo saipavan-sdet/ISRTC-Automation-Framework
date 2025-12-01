@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'MAVEN_HOME'
-        jdk 'JAVA_HOME'
+        maven 'Maven3'
+        jdk 'JDK 17'
     }
 
     stages {
@@ -17,13 +17,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh "mvn clean install -DskipTests"
+                bat "mvn clean install -DskipTests"
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh "mvn test"
+                bat "mvn test"
             }
         }
 
